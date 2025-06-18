@@ -1,11 +1,200 @@
 <html>
 <head>
   <title>Site da Lívia</title>
+  <style>
+    body {
+      background-color: #2fa8b5;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #247f89;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    nav {
+      background-color: #1c6b72;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .conteudo {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: #ffffff;
+      color: #00334d;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #2fa8b5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .resposta {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #1c6b72;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    function mostrarResposta(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </head>
 <body>
-  <h1>Site da Livia</h1>
-  <p> Este site foi criado por: Livia Gomes</p>
-</body>
 
-  
+  <header>
+    <h1>Site da Livia</h1>
+    <p>Este site foi criado por: Livia Gomes</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#animais">Animais Marinhos</a>
+    <a href="#video">Vídeo</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+
+  <div class="conteudo">
+
+    <section id="inicio">
+      <h2>Bem-vindo ao Mundo da Biologia Marinha</h2>
+      <p>Descubra animais incríveis, assista vídeos educativos, leia curiosidades e teste seus conhecimentos sobre o oceano!</p>
+    </section>
+
+    <section id="animais">
+      <h2>Animais Marinhos</h2>
+
+      <h3>Golfinho</h3>
+      <p>São mamíferos inteligentes e vivem em grupos. Usam sons para se comunicar.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Dolphind.jpg" alt="Golfinho">
+
+      <h3>Tubarão-Branco</h3>
+      <p>Predador poderoso com olfato aguçado. Pode sentir sangue a grandes distâncias.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg" alt="Tubarão">
+
+      <h3>Polvo</h3>
+      <p>Tem 8 braços, é superinteligente e se camufla para se proteger.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Common_octopus.jpg" alt="Polvo">
+
+      <h3>Cavalo-Marinho</h3>
+      <p>O macho carrega os filhotes. Tem aparência delicada e nada na vertical.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Hippocampus_reidi_-_Curacao.jpg" alt="Cavalo-marinho">
+
+      <h3>Água-viva</h3>
+      <p>Possuem tentáculos que podem queimar. Algumas brilham no escuro!</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Chrysaora_fuscescens.jpg" alt="Água-viva">
+
+      <h3>Tartaruga-Marinha</h3>
+      <p>Podem viver mais de 100 anos e estão ameaçadas pela poluição.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Hawksbill_turtle.jpg" alt="Tartaruga">
+    </section>
+
+    <section id="video">
+      <h2>Vídeo Educativo</h2>
+      <p>Assista a esse vídeo incrível sobre os segredos do oceano:</p>
+      <iframe src="https://www.youtube.com/embed/UX7T9kqv6bY" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="curiosidades">
+      <h2>Curiosidades do Mar</h2>
+      <ul>
+        <li>Mais de 80% do oceano nunca foi explorado.</li>
+        <li>Baleias podem cantar músicas que duram horas.</li>
+        <li>Existe um peixe chamado peixe-pescador que tem uma luz na cabeça.</li>
+        <li>Alguns polvos abrem potes para pegar comida.</li>
+      </ul>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz Marinho 🐠</h2>
+
+      <p><strong>Pergunta 1:</strong> Qual animal tem 8 braços?</p>
+      <button onclick="mostrarResposta('resp1')">Ver resposta</button>
+      <p class="resposta" id="resp1">Resposta: Polvo</p>
+
+      <p><strong>Pergunta 2:</strong> Qual macho cuida dos filhotes?</p>
+      <button onclick="mostrarResposta('resp2')">Ver resposta</button>
+      <p class="resposta" id="resp2">Resposta: Cavalo-marinho</p>
+
+      <p><strong>Pergunta 3:</strong> Qual animal pode brilhar no escuro?</p>
+      <button onclick="mostrarResposta('resp3')">Ver resposta</button>
+      <p class="resposta" id="resp3">Resposta: Água-viva</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Site da Lívia - Todos os direitos reservados</p>
+  </footer>
+
+</body>
 </html>
