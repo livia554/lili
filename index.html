@@ -198,3 +198,310 @@
 
 </body>
 </html>
+<html>
+<head>
+  <title>Site da Lívia</title>
+  <style>
+    body {
+      background-color: #2fa8b5;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #247f89;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    nav {
+      background-color: #1c6b72;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+    }
+
+    .conteudo {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: #ffffff;
+      color: #00334d;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #2fa8b5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1c6b72;
+    }
+
+    .resposta {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #1c6b72;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Quiz múltipla escolha */
+    .opcao {
+      background-color: #1c6b72;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      text-align: left;
+    }
+
+    .opcao:hover {
+      background-color: #247f89;
+    }
+  </style>
+
+  <script>
+    // Mostrar resposta simples
+    function mostrarResposta(id) {
+      const resp = document.getElementById(id);
+      resp.style.display = resp.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Quiz múltipla escolha
+    function checarResposta(respostaCorreta, botao) {
+      if (botao.innerText === respostaCorreta) {
+        alert('✅ Correto!');
+      } else {
+        alert('❌ Errado! Tente novamente.');
+      }
+    }
+
+    // Lightbox para galeria
+    function abrirLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      lightbox.style.display = 'block';
+      img.src = src;
+    }
+
+    function fecharLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Curiosidades pop-up
+    function mostrarCuriosidade(texto) {
+      alert(texto);
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Site da Livia</h1>
+    <p>Este site foi criado por: Livia Gomes</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#animais">Animais Marinhos</a>
+    <a href="#video">Vídeo</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#galeria">Galeria</a>
+  </nav>
+
+  <div class="conteudo">
+
+    <section id="inicio">
+      <h2>Bem-vindo ao Mundo da Biologia Marinha</h2>
+      <p>Descubra animais incríveis, assista vídeos educativos, leia curiosidades e teste seus conhecimentos sobre o oceano!</p>
+    </section>
+
+    <section id="animais">
+      <h2>Animais Marinhos</h2>
+
+      <h3>Golfinho</h3>
+      <p>São mamíferos inteligentes e vivem em grupos. Usam sons para se comunicar.</p>
+      <img src="golfinho.jpg" alt="Golfinho" onclick="abrirLightbox(this.src)">
+
+      <h3>Tubarão-Branco</h3>
+      <p>Predador poderoso com olfato aguçado. Pode sentir sangue a grandes distâncias.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg" alt="Tubarão" onclick="abrirLightbox(this.src)">
+
+      <h3>Polvo</h3>
+      <p>Tem 8 braços, é superinteligente e se camufla para se proteger.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Octopus2.jpg/330px-Octopus2.jpg" alt="Polvo" onclick="abrirLightbox(this.src)">
+
+      <h3>Cavalo-Marinho</h3>
+      <p>O macho carrega os filhotes. Tem aparência delicada e nada na vertical.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg/250px-Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg" alt="Cavalo-marinho" onclick="abrirLightbox(this.src)">
+
+      <h3>Água-viva</h3>
+      <p>Possuem tentáculos que podem queimar. Algumas brilham no escuro!</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Sea_nettles.jpg" alt="Água-viva" onclick="abrirLightbox(this.src)">
+
+      <h3>Tartaruga-Marinha</h3>
+      <p>Podem viver mais de 100 anos e estão ameaçadas pela poluição.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Chelonia_mydas_is_going_for_the_air_edit.jpg/250px-Chelonia_mydas_is_going_for_the_air_edit.jpg" alt="Tartaruga" onclick="abrirLightbox(this.src)">
+    </section>
+
+    <section id="video">
+      <h2>Vídeo Educativo</h2>
+      <p>Assista a esse vídeo incrível sobre os segredos do oceano:</p>
+      <iframe src="https://www.youtube.com/embed/GuIJkUTyAck?si=9uYlgXZ7iHDC1CSh" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="curiosidades">
+      <h2>Curiosidades do Mar</h2>
+      <ul>
+        <li onclick="mostrarCuriosidade('Mais de 80% do oceano nunca foi explorado.')">Mais de 80% do oceano nunca foi explorado.</li>
+        <li onclick="mostrarCuriosidade('Baleias podem cantar músicas que duram horas.')">Baleias podem cantar músicas que duram horas.</li>
+        <li onclick="mostrarCuriosidade('Existe um peixe chamado peixe-pescador que tem uma luz na cabeça.')">Peixe-pescador tem luz na cabeça.</li>
+        <li onclick="mostrarCuriosidade('Alguns polvos abrem potes para pegar comida.')">Alguns polvos abrem potes para pegar comida.</li>
+      </ul>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz Marinho 🐠</h2>
+
+      <p><strong>Pergunta 1:</strong> Qual animal tem 8 braços?</p>
+      <button class="opcao" onclick="checarResposta('Polvo', this)">Golfinho</button>
+      <button class="opcao" onclick="checarResposta('Polvo', this)">Polvo</button>
+      <button class="opcao" onclick="checarResposta('Polvo', this)">Tubarão</button>
+
+      <p><strong>Pergunta 2:</strong> Qual macho cuida dos filhotes?</p>
+      <button class="opcao" onclick="checarResposta('Cavalo-marinho', this)">Cavalo-marinho</button>
+      <button class="opcao" onclick="checarResposta('Cavalo-marinho', this)">Golfinho</button>
+      <button class="opcao" onclick="checarResposta('Cavalo-marinho', this)">Tartaruga</button>
+
+      <p><strong>Pergunta 3:</strong> Qual animal pode brilhar no escuro?</p>
+      <button class="opcao" onclick="checarResposta('Água-viva', this)">Água-viva</button>
+      <button class="opcao" onclick="checarResposta('Água-viva', this)">Polvo</button>
+      <button class="opcao" onclick="checarResposta('Água-viva', this)">Peixe-pescador</button>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria de Fotos</h2>
+      <img src="golfinho.jpg" alt="Golfinho" onclick="abrirLightbox(this.src)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg" alt="Tubarão" onclick="abrirLightbox(this.src)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Octopus2.jpg/330px-Octopus2.jpg" alt="Polvo" onclick="abrirLightbox(this.src)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg/250px-Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg" alt="Cavalo-marinho" onclick="abrirLightbox(this.src)">
+    </section>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
+    <span class="close" onclick="fecharLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Site da Lívia - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
